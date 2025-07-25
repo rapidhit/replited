@@ -1,13 +1,3 @@
-import { useEffect, useRef, useState } from 'react';
-
-interface WebSocketMessage {
-  type: string;
-  [key: string]: any;
-}
-
-export function useWebSocket(onMessage?: (message: WebSocketMessage) => void) {
-  const [isConnected, setIsConnected] = useState(false);
-  const [lastMessage, setLastMessage] = useState<WebSocketMessage | null>(null);
   const wsRef = useRef<WebSocket | null>(null);
 
   useEffect(() => {
